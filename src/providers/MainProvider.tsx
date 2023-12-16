@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PropertyProvider } from "@/contexts/PropertyContext";
 import { ReactNode } from "react";
+import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 interface MainProviderProps {
@@ -26,6 +27,7 @@ export function MainProvider({ children }: MainProviderProps) {
       <Header />
       {children}
       <Footer />
+      <Toaster />
     </PropertyProvider>
   </QueryClientProvider>
   )
