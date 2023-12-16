@@ -23,7 +23,7 @@ export function Header() {
             <li>
               <a
                 className="font-medium text-lg leading-5 text-dark100" 
-                href="#"
+                href="/"
               >
                 Início
               </a>
@@ -31,7 +31,7 @@ export function Header() {
             <li>
               <a
                 className="font-medium text-lg leading-5 text-dark100"  
-                href="#"
+                href="/gallery"
               >
                 Galeria
               </a>
