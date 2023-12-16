@@ -6,7 +6,7 @@ import bathroomImage from '../assets/img5.png';
 
 export function Gallery() {
   return (
-    <section className="px-80 py-11 bg-dark300 flex items-center flex-col">
+    <section className="px-80 py-11 bg-dark300 flex items-center justify-center flex-col">
       <h1 className="font-semibold text-dark100 text-[32px]">
         Galeria
       </h1>
@@ -16,7 +16,7 @@ export function Gallery() {
         trabalhamos com designs diferentes e inovadores.
       </p>
 
-      <div className="flex mt-8 gap-5">
+      <div className="flex mt-8 gap-5 items-center justify-center">
         <Image 
           src={roomImage}
           alt="Imagem de uma sala"
