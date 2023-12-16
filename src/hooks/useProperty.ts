@@ -2,9 +2,10 @@ import { PropertyContext } from "@/contexts/PropertyContext";
 import { useContext } from "react";
 
 export function useProperty() {
-  const { properties } = useContext(PropertyContext);
+  const { properties, isLoading } = useContext(PropertyContext);
 
   return {
     properties,
+    isLoading
   }
 }
