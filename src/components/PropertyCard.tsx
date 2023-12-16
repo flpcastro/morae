@@ -35,7 +35,7 @@ export function PropertyCard({ data }: PropertyCardProps) {
         </p>
       </div>
 
-      <Button>
+      <Button className="mt-2">
         Ver mais
       </Button>
     </div>
