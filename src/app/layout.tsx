@@ -3,6 +3,9 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { PropertyProvider } from '@/contexts/PropertyContex'
+import { Provider } from '@/providers/Provider'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -15,12 +18,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Header />
-        {children}
-        <Footer />
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   )
