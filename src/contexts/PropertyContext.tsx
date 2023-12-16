@@ -1,12 +1,13 @@
 "use client";
 
-import { Property } from "@/app/models/Property";
+import { Property } from "@/models/Property";
 import { getProperties } from "@/services/getProperties";
 import { ReactNode, createContext } from "react";
 import { useQuery } from "react-query";
 
 interface PropertyContextProps {
   properties: Property[];
+  isLoading: boolean;
 }
 
 interface PropertyProviderProps {
@@ -16,7 +17,7 @@ interface PropertyProviderProps {
 export const PropertyContext = createContext<PropertyContextProps>({} as PropertyContextProps);
 
 export function PropertyProvider({ children }: PropertyProviderProps) {
-  const { data, isFetching } = useQuery({
+  const { data, isFetching, isLoading } = useQuery({
     queryKey: 'properties',
     queryFn: async () => getProperties(),
   })
@@ -24,7 +25,8 @@ export function PropertyProvider({ children }: PropertyProviderProps) {
   return (
     <PropertyContext.Provider 
       value={{ 
-        properties: data! 
+        properties: data!,
+        isLoading: isLoading || isFetching,
       }}
     >
       {!isFetching && children}
